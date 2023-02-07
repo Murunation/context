@@ -1,5 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import {ProductContext} from "../App";
 
 export default function Header() {
-  return <div>Header</div>;
+  const {products } = useContext(ProductContext);
+  return <div>
+    <ul>
+      {products.map((product) => (
+        <li>{product}</li>
+      ))}
+    </ul>
+  </div>;
 }
